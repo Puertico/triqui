@@ -9,13 +9,13 @@ class Jugador:
         pass
 
     def realizar_jugada(self,unTablero):
-
-        while x>2 and x<0:
-            x=int(input("Ingresa la fila"))
+        x=-1
         y=-1
-        while x>2 and x<0:
-            y=int(input("Ingresa la columna"))
-
-        unTablero[x][y]= self.miFicha.simbolo
-
+        while unTablero.verificarJugada(x,y)==False:
+            
+            while x>2 or x<0:
+                x=int(input("Ingresa la fila"))
+            while x>2 or x<0:
+                y=int(input("Ingresa la columna"))
+        unTablero.matriz[x][y]= self.miFicha.simbolo
         return unTablero
